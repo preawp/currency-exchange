@@ -1,8 +1,16 @@
+import NavBar from "./NavBar.jsx";
+import Homepage from "./Homepage.jsx";
+import Calculator from "./Calculator.jsx";
+import API from "./API.jsx";
+
 function App() {
 
   return (
     <>
-        <h>Blank Page</h>
+        <NavBar/>
+        <Homepage/>
+        <Calculator/>
+        <API/>
     </>
   )
 }
