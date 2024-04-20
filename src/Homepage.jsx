@@ -1,4 +1,4 @@
-// Preaw's component
+// Teresa's component
 
 export default function Homepage() {
     return (

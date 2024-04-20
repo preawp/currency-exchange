@@ -1,4 +1,4 @@
-// Teresa's component
+// Simon's component
 
 export default function API() {
     return (

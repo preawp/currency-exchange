@@ -1,18 +1,26 @@
+import styled, { createGlobalStyle } from 'styled-components';
 import NavBar from "./NavBar.jsx";
 import Homepage from "./Homepage.jsx";
-import Calculator from "./Calculator.jsx";
 import API from "./API.jsx";
+import AboutUs from "./AboutUs.jsx";
 
-function App() {
+//Global styling for the website
+const GlobalStyle = createGlobalStyle`
+    body {
+        color: black;
+        font-family: 'Arial', sans-serif;
+    }
+`;
 
-  return (
-    <>
-        <NavBar/>
-        <Homepage/>
-        <Calculator/>
-        <API/>
-    </>
-  )
+export default function App() {
+    return (
+        <>
+            <GlobalStyle />
+            <NavBar/>
+            <Homepage/>
+            <API/>
+            <AboutUs/>
+        </>
+    );
 }
 
-export default App
