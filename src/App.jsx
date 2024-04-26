@@ -9,13 +9,16 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 const GlobalStyle = createGlobalStyle`
     body {
         color: black;
-        font-family: 'Arial', sans-serif;
+        font-family: Arial , sans-serif;
+        margin: 0;
+        box-sizing: border-box;
     }
 `;
 
 export default function App() {
     return (
         <>
+
             <BrowserRouter>
                 <NavBar/>
                 <Routes>
