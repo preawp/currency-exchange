@@ -1,6 +1,6 @@
 import  {useEffect} from 'react'
 export default function DataFetcher({currency,onDataFetched}){
-
+//
     useEffect(() => {
         const apiKey=import.meta.env.VITE_API_KEY;
         const apiUrl = `https://v6.exchangerate-api.com/v6/2ebe7335d4f26e853cb8a95b/latest/${currency}`;

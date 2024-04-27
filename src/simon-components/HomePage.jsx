@@ -1,7 +1,7 @@
 import DataFetcher from "../../../cs391/projects/projecttrying420-fp/src/hooks/DataFecher.jsx"
 import {useEffect, useState } from "react";
 import {useCallback} from "react";
-
+//
 export default function HomePage() {
     const [currency, setCurrency] = useState("");
     const [currencyToFetch, setCurrencyToFetch] = useState(""); // This state will be used to trigger the fetch
