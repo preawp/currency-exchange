@@ -13,6 +13,7 @@ const Title = styled.h2`
     text-align: center;
     font-size: 5vh;
     color: #133601;
+    padding-left: 10%;
 `;
 
 const Button = styled.button`
@@ -21,7 +22,7 @@ const Button = styled.button`
     justify-content: center;
     align-items: center;
     background: transparent;
-    padding: 10px;
+    padding: 20px;
     line-height: 2;
     border-radius: 5px;
     font-weight: bold;
@@ -36,12 +37,10 @@ export default function NavBar() {
 
     return (
         <NavBarWrapper>
-            <Button onClick={() => navigate('/')}>Homepage</Button>
             <Title>Currency Exchange</Title>
+            <Button onClick={() => navigate('/')}>Homepage</Button>
+            <Button onClick={() => navigate('/calculator')}>Calculator</Button>
             <Button onClick={() => navigate('/about-us')}>About Us</Button>
         </NavBarWrapper>
     );
 }
-
-
-

@@ -4,6 +4,7 @@ import Homepage from "./Homepage.jsx";
 import API from "./API.jsx";
 import AboutUs from "./AboutUs.jsx";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Calculator from "./simon-components/Calculator.jsx"
 
 //Global styling for the website
 const GlobalStyle = createGlobalStyle`
@@ -24,6 +25,7 @@ export default function App() {
                 <Routes>
                     <Route path='/' element={<Homepage/>} />
                     <Route path='/about-us' element={<AboutUs/>}/>
+                    <Route path='/calculator' element={<Calculator/>}/>
                 </Routes>
             </BrowserRouter>
         </>

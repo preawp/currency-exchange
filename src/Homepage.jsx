@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {useNavigate} from "react-router-dom";
 
 
 const Container = styled.div`
@@ -56,6 +57,8 @@ const GeneralImage = styled.img`
 `;
 
 const HomePage = () => {
+    let navigate = useNavigate();
+
     return (
         <Container>
             <div>
@@ -64,15 +67,21 @@ const HomePage = () => {
                     <GeneralImage src="/assets/currencies.jpeg" alt="Welcome Image" />
                     <CurrencyContainer>
                         <CurrencyOption>
-                            <CurrencyImage src="/assets/usd.jpeg" alt="USD" />
+                            <button onClick={() => navigate('/calculator')}>
+                                <CurrencyImage src="/assets/usd.jpeg" alt="USD" />
+                            </button>
                             <CurrencyText>Convert USD</CurrencyText>
                         </CurrencyOption>
                         <CurrencyOption>
-                            <CurrencyImage src="/assets/IMG_1114.JPG" alt="EUR" />
+                            <button onClick={() => navigate('/calculator')}>
+                                <CurrencyImage src="/assets/IMG_1114.JPG" alt="EUR" />
+                            </button>
                             <CurrencyText>Convert EUR</CurrencyText>
                         </CurrencyOption>
                         <CurrencyOption>
-                            <CurrencyImage src="/assets/yuan.jpeg" alt="GBP" />
+                            <button onClick={() => navigate('/calculator')}>
+                                <CurrencyImage src="/assets/yuan.jpeg" alt="GBP"/>
+                            </button>
                             <CurrencyText>Convert CNY</CurrencyText>
                         </CurrencyOption>
                     </CurrencyContainer>
