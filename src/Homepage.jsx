@@ -56,7 +56,7 @@ const WelcomeMessage = styled.h1`
 const GeneralImage = styled.img`
     max-width: 75%;
     height: 75%;
-    border: 10px solid #f1f1f1; // Existing grey border
+    border: 10px solid #f1f1f1;
     box-shadow: 0 0 0 1px #747474;
 `;
 
