@@ -1,3 +1,4 @@
+//Teresa's component
 import React from 'react';
 import styled from 'styled-components';
 import {useNavigate} from "react-router-dom";
@@ -17,11 +18,11 @@ const Content = styled.div`
 
 const CurrencyContainer = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: column; //for currency images to be stacked together in a column on the right side of the screen
 `;
 
 const CurrencyOption = styled.div`
-    margin-bottom: 20px; 
+    margin-bottom: 20px; //spacing between currency images
     display: flex;
     flex-direction: column; 
     align-items: center;
