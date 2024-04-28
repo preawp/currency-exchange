@@ -11,30 +11,30 @@ const Container = styled.div`
 const Content = styled.div`
     padding: 20px;
     display: flex;
-    justify-content: space-between; /* Align items with space between */
-    align-items: flex-start; /* Align items to the start (top) */
+    justify-content: space-between;
+    align-items: flex-start;
 `;
 
 const CurrencyContainer = styled.div`
     display: flex;
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column;
 `;
 
 const CurrencyOption = styled.div`
-    margin-bottom: 20px; /* Add margin between each currency option */
+    margin-bottom: 20px; 
     display: flex;
-    flex-direction: column; /* Stack text underneath image */
-    align-items: center; /* Align items at the center */
+    flex-direction: column; 
+    align-items: center;
 `;
 
 const CurrencyImage = styled.img`
     width: 150px;
     height: 150px;
-    border: 3px solid transparent; /* Add transparent border */
-    transition: border-color 0.3s ease; /* Smooth transition for border color */
+    border: 3px solid transparent;
+    transition: border-color 0.3s ease; 
 
     &:hover {
-        border-color: #74c7a3; /* Change border color on hover */
+        border-color:  #354121; 
     }
 
 `;
@@ -46,8 +46,10 @@ const CurrencyText = styled.span`
 
 
 const WelcomeMessage = styled.h1`
+    margin-top: 50px;
+    font-size: 30px;
     margin-bottom: 20px;
-    color: darkolivegreen;
+    color: #354121;
     align-content: center;
 `;
 

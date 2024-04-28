@@ -1,43 +1,56 @@
 // Sean's component
 import styled from 'styled-components';
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const NavBarWrapper = styled.div`
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    background: darkseagreen;
+    justify-content: space-evenly;
+    background: #354121;
 `;
 
 const Title = styled.h2`
     text-align: center;
     font-size: 5vh;
-    color: #133601;
+    font-weight: bold;
+    color: #ffffff;
     padding-left: 10%;
 `;
 
 const Button = styled.button`
-    color: #133601;
+    font-family: 'PT Serif', sans-serif;
+    color: #354121;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: transparent;
-    padding: 20px;
-    line-height: 2;
+    background: #ffffff;
+    padding: 5px 15px;
+    line-height: 1.5;
     border-radius: 5px;
     font-weight: bold;
-    border: 4px solid;
-    font-size: inherit;
+    font-size: 1rem;
     cursor: pointer;
-    margin: 10px 5%;
+    margin: 2%;
+    transition: background 0.2s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.1s ease-in-out; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    &:active {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        transform: translateY(1px);
+    }
 `;
+
 
 export default function NavBar() {
     let navigate = useNavigate();
 
     return (
         <NavBarWrapper>
-            <Title>Currency Exchange</Title>
+            <Title>CURRENCY EXCHANGE</Title>
             <Button onClick={() => navigate('/')}>Homepage</Button>
             <Button onClick={() => navigate('/calculator')}>Calculator</Button>
             <Button onClick={() => navigate('/about-us')}>About Us</Button>

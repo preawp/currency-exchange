@@ -13,6 +13,7 @@ const StyledAboutUs = styled.div`
    align-items: center;
 `
 const StyledHeader = styled.h1`
+    color: #354121;
    margin-bottom: 1%`;
 const StyledName = styled.p`
    font-weight: bold;
@@ -26,28 +27,11 @@ const StyledDescription = styled.p`
 const StyledImage = styled.img`
     width: 200px;
     height: auto;
-    border: 5px solid #addb9b;
+    border: 5px solid  #354121;
     border-radius: 10px;
     animation: borderAnimation 3s infinite;
-    transition: transform 0.3s ease-in-out;  // Smooth transition for transform changes
-
-    @keyframes borderAnimation {
-        0% {
-            border-color: #addb9b;
-        }
-        25% {
-            border-color: #759669;
-        }
-        50% {
-            border-color: #3e624d;
-        }
-        75% {
-            border-color: #72986d;
-        }
-        100% {
-            border-color: #9ec49b;
-        }
-    }
+    transition: transform 0.3s ease-in-out; 
+    
 
     &:hover {
         transform: rotate(3deg); 

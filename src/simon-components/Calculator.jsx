@@ -1,7 +1,43 @@
 import DataFetcher from "./DataFecher.jsx"
 import {useEffect, useState } from "react";
 import {useCallback} from "react";
-//
+import styled from "styled-components";
+
+const StyledContainer = styled.div`
+    color: #354121;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+const StyledInput = styled.input`
+    width: 20%;
+    padding: 8px;
+    margin: 8px;
+    border: 2px solid #354121;
+    border-radius: 4px;
+`;
+
+const StyledButton = styled.button`
+    font-family: 'PT Serif', sans-serif;
+    color: #ffffff;
+    background: #354121;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 8px;
+    transition: transform 0.1s ease-in-out; 
+
+    &:hover {
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
+`;
+
+
 export default function Calculator() {
     const [currency, setCurrency] = useState("");
     const [currencyToFetch, setCurrencyToFetch] = useState(""); // This state will be used to trigger the fetch
@@ -69,16 +105,17 @@ export default function Calculator() {
 
     return (
         <>
+            <StyledContainer>
             <h1>Tell me the first currency you want to check</h1>
             <p>Enter a currency code below to get data of exchange rates:</p>
-            <input
+            <StyledInput
                 type="text"
                 value={currency}
                 placeholder="Currency Code (e.g., USD)"
                 onChange={(e) => setCurrency(e.target.value.toUpperCase())}/>
-            <button onClick={handleButtonClick}>Check All Rate for your currency(how much is one unit of your currency
+            <StyledButton onClick={handleButtonClick}>Check All Rate for your currency(how much is one unit of your currency
                 worth in the form of another currency )
-            </button>
+            </StyledButton>
 
 
             {currencyToFetch && <DataFetcher currency={currencyToFetch} onDataFetched={handleDataFetched}/>}
@@ -94,20 +131,20 @@ export default function Calculator() {
 
             <h2>Or Tell me the currency you currently have, the one you want to exchange for, and the amount you have
                 for your current currency</h2>
-            <input type="text" value={CalcFirstCurr} placeholder="First Currency name(the one you have)"
-                   onChange={(e) => setFirst(e.target.value.toUpperCase())}></input>
-            <input type="text" value={CalcSecondCurr}
+            <StyledInput type="text" value={CalcFirstCurr} placeholder="First Currency name(the one you have)"
+                   onChange={(e) => setFirst(e.target.value.toUpperCase())}></StyledInput>
+            <StyledInput type="text" value={CalcSecondCurr}
                    placeholder="Second Currency name(the one you want to exchange for)"
-                   onChange={(e) => setSecond(e.target.value.toUpperCase())}></input>
-            <input type="number" // Changed to type number for better input control
+                   onChange={(e) => setSecond(e.target.value.toUpperCase())}></StyledInput>
+            <StyledInput type="number" // Changed to type number for better input control
                    value={amount} // binds this input to amount state
                    placeholder="Amount"
                    onChange={(e) => SetAmount(e.target.value)}/>
 
 
-            <button onClick={eXHandleButtonClick}> click for calculation
+            <StyledButton onClick={eXHandleButtonClick}> click for calculation
 
-            </button>
+            </StyledButton>
             {exchangeCurrencyToFetch && (
                 <DataFetcher currency={exchangeCurrencyToFetch} onDataFetched={ExchangeHandleDataFetched}/>
             )}
@@ -117,6 +154,7 @@ export default function Calculator() {
                     <p>No calculation result</p>
                 )}
             </div>
+            </StyledContainer>
 
         </>
 
