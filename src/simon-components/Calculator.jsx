@@ -125,9 +125,9 @@ export default function Calculator() {
 
 
             {currencyToFetch && <DataFetcher currency={currencyToFetch} onDataFetched={handleDataFetched}/>}
-              <!--check data exists and then call DataFetcher, give a function handleDataFetched and DataFetcher will call back., for the purpose of storing data from api  -->
+                {/*check data exists and then call DataFetcher, give a function handleDataFetched and DataFetcher will call back., for the purpose of storing data from api*/}
             <div>
-                <!--just printing the result of data here  -->
+                {/*just printing the result of data here*/}
                 {currencyRate.conversion_rates ? (
                     Object.entries(currencyRate.conversion_rates).map(([code, rate]) => (
                         <p key={code}>{code}: {rate}</p>
@@ -136,7 +136,7 @@ export default function Calculator() {
                     <p>No rate data available for now for lists of countries .</p>
                 )}
             </div>
-                <!--second functionality\ -->
+                {/*--second functionality*/}
             <h2>Or Tell me the currency you currently have, the one you want to exchange for, and the amount you have
                 for your current currency</h2>
             <StyledInput type="text" value={CalcFirstCurr} placeholder="First Currency name(the one you have)"
@@ -153,7 +153,7 @@ export default function Calculator() {
             <StyledButton onClick={eXHandleButtonClick}> click for calculation
 
             </StyledButton>
-                    <!-- similar process  as above, call the functions with data and they will get back result. and extra layer of calculation happens in the function  -->
+                {/*-- similar process  as above, call the functions with data and they will get back result. and extra layer of calculation happens in the function*/}
             {exchangeCurrencyToFetch && (
                 <DataFetcher currency={exchangeCurrencyToFetch} onDataFetched={ExchangeHandleDataFetched}/>
             )}
