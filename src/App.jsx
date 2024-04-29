@@ -21,6 +21,7 @@ export default function App() {
             <GlobalStyle />
             <BrowserRouter>
                 <NavBar/>
+                {/*Sean added routes for elements*/}
                 <Routes>
                     <Route path='/' element={<Homepage/>} />
                     <Route path='/about-us' element={<AboutUs/>}/>

@@ -73,18 +73,21 @@ const HomePage = () => {
                     <GeneralImage src="/assets/currencies.jpeg" alt="Welcome Image" />
                     <CurrencyContainer>
                         <CurrencyOption>
+                            {/*Sean added Nav button*/}
                             <button onClick={() => navigate('/calculator')}>
                                 <CurrencyImage src="/assets/usd.jpeg" alt="USD" />
                             </button>
                             <CurrencyText>Convert USD</CurrencyText>
                         </CurrencyOption>
                         <CurrencyOption>
+                            {/*Sean added Nav button*/}
                             <button onClick={() => navigate('/calculator')}>
                                 <CurrencyImage src="/assets/IMG_1114.JPG" alt="EUR" />
                             </button>
                             <CurrencyText>Convert EUR</CurrencyText>
                         </CurrencyOption>
                         <CurrencyOption>
+                            {/*Sean added Nav button*/}
                             <button onClick={() => navigate('/calculator')}>
                                 <CurrencyImage src="/assets/yuan.jpeg" alt="GBP"/>
                             </button>

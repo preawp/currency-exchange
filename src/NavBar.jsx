@@ -2,6 +2,7 @@
 import styled from 'styled-components';
 import { useNavigate } from "react-router-dom";
 
+// Style the NavBar as a whole
 const NavBarWrapper = styled.div`
     width: 100%;
     display: flex;
@@ -9,6 +10,7 @@ const NavBarWrapper = styled.div`
     background: #354121;
 `;
 
+// Style the title
 const Title = styled.h2`
     text-align: center;
     font-size: 5vh;
@@ -17,6 +19,7 @@ const Title = styled.h2`
     padding-left: 10%;
 `;
 
+// Style the buttons to click
 const Button = styled.button`
     font-family: 'PT Serif', sans-serif;
     color: #354121;
@@ -45,6 +48,7 @@ const Button = styled.button`
 `;
 
 
+// NavBar function
 export default function NavBar() {
     let navigate = useNavigate();
 
