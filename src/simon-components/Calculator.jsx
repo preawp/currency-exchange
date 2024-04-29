@@ -39,9 +39,10 @@ const StyledButton = styled.button`
 
 
 export default function Calculator() {
-    const [currency, setCurrency] = useState("");
+    const [currency, setCurrency] = useState("");//This is for setting currency name here, currency= currency code
     const [currencyToFetch, setCurrencyToFetch] = useState(""); // This state will be used to trigger the fetch
-    const [currencyRate, setRate] = useState({});
+    const [currencyRate, setRate] = useState({});// This is the data of all other currencies's worth comparing the one you have
+
 
 
 
@@ -56,6 +57,7 @@ export default function Calculator() {
 
     const handleDataFetched = useCallback((data) => {
         setRate(data);
+        //DataFetcher calling this so we got data stored from api. also cleaning the setCurrencyToFetch hook
         console.log("data printing yoyo", data);
         setCurrencyToFetch("");
     }, []);
@@ -67,17 +69,20 @@ export default function Calculator() {
 
     const handleButtonClick = () => {
         if (currency.trim() !== "") {
+            //check if there is an actual input and then get the currency code
             setCurrencyToFetch(currency);
         }
     };
     const eXHandleButtonClick = () => {
         if (CalcFirstCurr.trim() !== "") {
             SetExCurrencyToFetch(CalcFirstCurr);
+            // similar process to previous functinality
         }
     };
 
 
     useEffect(() => {
+        // doing the calculation for second functionality here. when data changes we calcualte ,after conditonal checking the fields if they valid ,we call calculateResult()
         // Ensure all required data is present and valid before attempting calculation
         if (CalcFirstCurr && CalcSecondCurr && amount > 0 && exchangeRates && exchangeRates.conversion_rates) {
             if (CalcFirstCurr in exchangeRates.conversion_rates && CalcSecondCurr in exchangeRates.conversion_rates) {
@@ -90,6 +95,7 @@ export default function Calculator() {
     },   [CalcFirstCurr, CalcSecondCurr, amount, exchangeRates]);
 
     const calculateResult = () => {
+        // doing currency math here, get the amount of currency you could exchange for in ExchangedAmount
         if (CalcFirstCurr && CalcSecondCurr && amount > 0 ) {
             // Check that both currencies exist in the conversion rates
             if (CalcFirstCurr in exchangeRates.conversion_rates && CalcSecondCurr in exchangeRates.conversion_rates) {
@@ -119,7 +125,9 @@ export default function Calculator() {
 
 
             {currencyToFetch && <DataFetcher currency={currencyToFetch} onDataFetched={handleDataFetched}/>}
+              <!--check data exists and then call DataFetcher, give a function handleDataFetched and DataFetcher will call back., for the purpose of storing data from api  -->
             <div>
+                <!--just printing the result of data here  -->
                 {currencyRate.conversion_rates ? (
                     Object.entries(currencyRate.conversion_rates).map(([code, rate]) => (
                         <p key={code}>{code}: {rate}</p>
@@ -128,7 +136,7 @@ export default function Calculator() {
                     <p>No rate data available for now for lists of countries .</p>
                 )}
             </div>
-
+                <!--second functionality\ -->
             <h2>Or Tell me the currency you currently have, the one you want to exchange for, and the amount you have
                 for your current currency</h2>
             <StyledInput type="text" value={CalcFirstCurr} placeholder="First Currency name(the one you have)"
@@ -145,6 +153,7 @@ export default function Calculator() {
             <StyledButton onClick={eXHandleButtonClick}> click for calculation
 
             </StyledButton>
+                    <!-- similar process  as above, call the functions with data and they will get back result. and extra layer of calculation happens in the function  -->
             {exchangeCurrencyToFetch && (
                 <DataFetcher currency={exchangeCurrencyToFetch} onDataFetched={ExchangeHandleDataFetched}/>
             )}
