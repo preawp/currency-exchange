@@ -45,8 +45,8 @@ export default function Calculator() {
 
 
 
-
-    const [CalcFirstCurr, setFirst]= useState("");
+    
+    const [CalcFirstCurr, setFirst]= useState("");// very similar logic to above for the second functionality. except there are two currency to store and extra calculation to be done and store
     const [exchangeCurrencyToFetch,SetExCurrencyToFetch]= useState("")
     const [CalcSecondCurr, setSecond]= useState("");
     const [amount, SetAmount]=useState(0);
